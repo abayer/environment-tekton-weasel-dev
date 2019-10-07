@@ -32,7 +32,7 @@ spec:
             entries:
             - integration
             - tekton
-            - bdd
+            - static
             - lint
             - boot-vault
       queries:
@@ -53,8 +53,8 @@ spec:
       trigger: (?m)^/test( all| integration),?(\s+|$)
     - agent: tekton
       alwaysRun: true
-      context: bdd
-      name: bdd
+      context: static
+      name: static
       queries:
         - labels:
             entries:
@@ -69,8 +69,8 @@ spec:
               - needs-rebase
               - needs-security-review
       report: true
-      rerunCommand: /test bdd
-      trigger: (?m)^/test( all| bdd),?(\s+|$)
+      rerunCommand: /test static
+      trigger: (?m)^/test( all| static| bdd),?(\s+|$)
     - agent: tekton
       alwaysRun: true
       context: tekton

@@ -141,7 +141,7 @@ controllerbuild:
   - "build"
   - "--git-reporting"
   - "--batch-mode"
-  - "--git-credentials"
+  - "--git-credentialsIGNORE"
   - "--verbose"
 {{- else }}
 controllerbuild:
